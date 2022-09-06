@@ -7,6 +7,7 @@ import './App.css';
 
 const PORT = 3001;
 const socket = io(`http://localhost:${PORT}`);
+// const socket = io(`https://chat-app-backend-v1.herokuapp.com/`);
 
 function App() {
 
@@ -26,16 +27,16 @@ function App() {
     socket.on('disconnect', () => {
       setIsConnected(false);
     });
-    // socket.on('receive_msg', (msg) => {
-    //   setNewMessage((messages) => [...messages, msg]);
-    // });
+    socket.on('receive_msg', (msg) => {
+      setNewMessage((messages) => [...messages, msg]);
+    });
   
     return () => {
       socket.off('connect');
       socket.off('disconnect');
     }
   
-  }, [isConnected]) //newMessage]),
+  }, [isConnected, newMessage]) 
 
   
   useEffect(() => {
