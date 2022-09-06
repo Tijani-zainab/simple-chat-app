@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import io from "socket.io-client";
+import { io } from "socket.io-client";
+// import io from "socket.io-client";
 import { v4 } from 'uuid';
 import './App.css';
 

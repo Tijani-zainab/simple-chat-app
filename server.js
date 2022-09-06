@@ -1,9 +1,8 @@
-const { Socket } = require('dgram');
+// const { Socket } = require('express-socket.io-session');
 const express = require('express');
 const app = express();
 const {createServer, Server} = require('http');
 const server = createServer(app);
-
 const{server} = require("socket.io");
 const port = 3001;
 
