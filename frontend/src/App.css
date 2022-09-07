@@ -64,18 +64,42 @@ body {
   font-family: 'Karla', sans-serif;
 }
 
+.enter--message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Karla', sans-serif;
+}
+
+.chat-desc {
+  color: #fff;
+  font-size: 1rem;
+  text-align: left; 
+}
+
 /* ::placeholder{
   color: #fff;
 } */
 
 .chat-box {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-end; */
   /* height: 100%; */
   overflow: scroll;
   padding: 10px;
-  border: 1px #0B2434;
+  border: 2px #fff;
+  color: #0B2434;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #abd4ed;
 }
 
 @media only screen and (max-width: 632px) {
@@ -100,6 +124,10 @@ body {
   .input-field {
     width: 100%;
     font-size: 1rem;
+  }
+
+  .enter--message {
+    width: 100%;
   }
 
 } 

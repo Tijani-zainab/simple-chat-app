@@ -79,13 +79,13 @@ function App() {
           </>
           :
           <>
-            <h5>Room: {room} | User: {user}</h5>
+            <h5 className="chat-desc">Room: {room} | User: {user}</h5>
             <div className="chat-box">
               {messages.map((el => <div key={v4()}>{el}</div>))}
             </div>
 
-            <input type="text" placeholder="Enter message" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
-            <button onClick={handleSendMessage}>Send message</button>
+            <input className="enter--message" type="text" placeholder="Enter message" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
+            <button className="btn-chat" onClick={handleSendMessage}>Send message</button>
           </>
         }
     </div>
