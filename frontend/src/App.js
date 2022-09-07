@@ -5,9 +5,9 @@ import { v4 } from 'uuid';
 import './App.css';
 
 
-const PORT = 3001;
-const socket = io(`http://localhost:${PORT}`);
-// const socket = io(`https://chat-app-backend-v1.herokuapp.com/`);
+// const PORT = 3001;
+// const socket = io(`http://localhost:${PORT}`);
+const socket = io(`https://chat-app-backend-v1.herokuapp.com/`);
 
 function App() {
 
