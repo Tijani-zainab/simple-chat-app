@@ -5,9 +5,9 @@ import { v4 } from 'uuid';
 import './App.css';
 
 
-// const PORT = 3001;
-// const socket = io(`http://localhost:${PORT}`);
-const socket = io(`https://chat-app-backend-v1.herokuapp.com/`);
+const PORT = 3001;
+const socket = io(`http://localhost:${PORT}`);
+// const socket = io(`https://chat-app-backend-v1.herokuapp.com/`);
 
 function App() {
 
@@ -61,7 +61,7 @@ function App() {
       message: newMessage
     }
     socket.emit("send-msg", newMsgData);
-    const msg = `${user} send: ${newMessage}`;
+    const msg = `${user}: ${newMessage}`;
     setMessages(prevState => [msg, ...prevState]);
     setNewMessage("");
 
@@ -79,13 +79,13 @@ function App() {
           </>
           :
           <>
-            <h5 className="chat-desc">Room: {room} | User: {user}</h5>
+            <h5>Room: {room} | User: {user}</h5>
             <div className="chat-box">
               {messages.map((el => <div key={v4()}>{el}</div>))}
             </div>
 
-            <input className="enter--message" type="text" placeholder="Enter message" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
-            <button className="btn-chat" onClick={handleSendMessage}>Send message</button>
+            <input type="text" placeholder="Enter message" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
+            <button onClick={handleSendMessage}>Send message</button>
           </>
         }
     </div>
