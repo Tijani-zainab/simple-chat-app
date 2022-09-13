@@ -27,16 +27,17 @@ function App() {
     socket.on('disconnect', () => {
       setIsConnected(false);
     });
-    socket.on('receive_msg', (msg) => {
-      setNewMessage((messages) => [...messages, msg]);
-    });
+    // socket.on('receive_msg', (msg) => {
+    //   setNewMessage((messages) => [...messages, msg]);
+    // });
   
     return () => {
       socket.off('connect');
       socket.off('disconnect');
+      // socket.off('receive_msg');
     }
   
-  }, [isConnected, newMessage]) 
+  }, [isConnected])//, newMessage]) 
 
   
   useEffect(() => {
@@ -44,13 +45,13 @@ function App() {
       const msg = `${user} send: ${message}`;
       setMessages(prevState => [msg, ...prevState]);
     });
-  }, [socket, messages])
+  }, [messages])//, messages])
 
 
   const handleEnterChatRoom = () => {
     if (user !== "" && room !== "") {
-      socket.emit("join_room", {user, room});
       setChatIsVisible(true);
+      socket.emit("join_room", {user, room});
     }
   }
 
