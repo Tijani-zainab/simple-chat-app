@@ -1,7 +1,7 @@
 # simple-chat-app
 
 ## a really simple messaging web app built with socket.io
-[https://symple-chat-app.netlify.app/][view here]
+[https://symple-chat-app.netlify.app/](view here)
 
 ## Quick start:
 
